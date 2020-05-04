@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_color"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_marginTop="180dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Join To Prevoice"
+        android:fontFamily="cursive"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="@color/gold"/>
+
+
+    <LinearLayout
+        android:paddingTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/textview"
+        android:layout_margin="15dp">
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+91"
+                android:textSize="18sp"
+                android:textColor="@color/gold"
+                android:layout_marginRight="3dp"/>
+        <EditText
+            android:id="@+id/phoneText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="9876543210"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:backgroundTint="@color/gold" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/codeText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="25dp"
+            android:hint="Write you code here..."
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:layout_below="@+id/phoneAuth"
+            android:drawableLeft="@drawable/password"
+            android:drawableTint="@android:color/black"
+            android:backgroundTint="@color/gold"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/continueNextButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/codeText"
+            android:layout_centerHorizontal="true"
+            android:text="Continue"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textAllCaps="false"
+            android:layout_marginTop="6dp"
+            android:textSize="15dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="@color/gold"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "171418166621",
+    "firebase_url": "https://prevoice-39aec.firebaseio.com",
+    "project_id": "prevoice-39aec",
+    "storage_bucket": "prevoice-39aec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171418166621:android:33a533813d7d15728b74b4",
+        "android_client_info": {
+          "package_name": "com.developer.sagar.prevoice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171418166621-9a69u542mjcphu8ftrobcj8df2lbanko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.developer.sagar.prevoice",
+            "certificate_hash": "448c5c743101644f39d1e9d4cbdb54488595f66c"
+          }
+        },
+        {
+          "client_id": "171418166621-4u38e24evkn6ajedj381h97i0paqc9od.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkBQIBBExHgKXliakyU9AjgkQO2I0OwPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171418166621-4u38e24evkn6ajedj381h97i0paqc9od.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
