@@ -40,11 +40,14 @@ public class HomeActivity extends AppCompatActivity {
         spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
         spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_search_black_24dp));
         spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.smiles));
-        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_book_black_24dp));
+        spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.pdf_reader));
         spaceNavigationView.addSpaceItem(new SpaceItem("", R.drawable.avatar));
 
         spaceNavigationView.setCentreButtonSelectable(true);
         spaceNavigationView.setCentreButtonSelected();
+        if(savedInstanceState==null)
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,new HomeFragment()).commit();
+
 
         spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override

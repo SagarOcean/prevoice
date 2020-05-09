@@ -129,11 +129,14 @@ public class SearchFragment extends Fragment {
                             @Override
                             public void onClick(View view) {
                                 String visit_user_id = getRef(i).getKey();
-                                Intent intent = new Intent(getActivity().getApplicationContext(),FriendFragment.class);
-                                intent.putExtra("visit_user_id",visit_user_id);
-                                intent.putExtra("profile_image",user.getImage());
-                                intent.putExtra("profile_name",user.getName());
-                                startActivity(intent);
+                                Fragment fragment = new FriendFragment();
+                                Bundle bundle = new Bundle();
+                                bundle.putString("visit_user_id",visit_user_id);
+                                bundle.putString("profile_image",user.getImage());
+                                bundle.putString("profile_name",user.getName());
+                                Toast.makeText(getActivity().getApplicationContext(),"request sent",Toast.LENGTH_SHORT).show();
+                                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,fragment).commit();
+
 
                             }
                         });

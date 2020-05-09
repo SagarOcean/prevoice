@@ -6,7 +6,8 @@
     android:layout_marginLeft="25dp"
     android:layout_marginTop="15dp"
     android:layout_marginRight="25dp"
-    android:background="@drawable/rounded_button"
+    android:background="#eeccdd"
+    app:cardCornerRadius="25dp"
     android:elevation="20dp"
     android:orientation="vertical">
 
@@ -14,27 +15,23 @@
         android:id="@+id/cardView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#fff"
 
         >
 
 
         <Button
             android:id="@+id/add_friend"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="30dp">
+            android:background="@drawable/add_user"
+            android:backgroundTint="@color/violet"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+         >
 
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/animation_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
 
-                android:scaleType="fitCenter"
-                app:lottie_autoPlay="true"
-
-                app:lottie_fileName="add.json"
-                app:lottie_loop="true" />
         </Button>
 
         <LinearLayout
@@ -45,56 +42,10 @@
             android:orientation="horizontal"
 
             >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/text_contact"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="cursive"
-                    android:text="Ocean"
-                    android:textColor="@color/gold"
-                    android:textSize="40dp"
-                    android:textStyle="bold"></TextView>
-
-                <TextView
-                    android:id="@+id/contact_age"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="20"
-                    android:textColor="@color/gold"
-                    android:textSize="20dp"
-                    android:textStyle="bold"></TextView>
-
-                <TextView
-                    android:id="@+id/contact_country"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="india"
-                    android:textColor="@color/gold"
-                    android:textSize="20dp"
-                    android:textStyle="bold"></TextView>
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/bgcolor"></View>
-
             <androidx.cardview.widget.CardView
                 android:layout_width="155dp"
                 android:layout_height="155dp"
-                app:cardBackgroundColor="@color/gold"
+                app:cardBackgroundColor="@color/violet"
                 app:cardCornerRadius="250dp">
 
                 <androidx.cardview.widget.CardView
@@ -114,6 +65,53 @@
                 </androidx.cardview.widget.CardView>
 
             </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="cursive"
+                    android:text="Ocean"
+                    android:textColor="@color/violet"
+                    android:textSize="40dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/contact_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="20"
+                    android:textColor="@color/violet"
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:id="@+id/contact_country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="india"
+                    android:textColor="@color/violet"
+                    android:textSize="20dp"
+                    android:textStyle="bold"></TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bgcolor"></View>
+
 
 
         </LinearLayout>

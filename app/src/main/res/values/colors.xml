@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#023857</color>
     <color name="colorAccent">#00BCD4</color>
     <color name="gold">#A77A26</color>
+    <color name="violet">#7f00ff </color>
     <color name="bgcolor">#29332F</color>
 </resources>

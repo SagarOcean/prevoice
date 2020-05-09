@@ -1,16 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.leo.simplearcloader.SimpleArcLoader
+        android:visibility="gone"
+        android:id="@+id/pdf_loader"
+        android:layout_centerInParent="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:arc_style="simple_arc"/>
+
+
+
+<RelativeLayout
+    android:id="@+id/files"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Read"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="cursive"
+        android:text="Upload a file"
+        android:textColor="@color/violet"
+        android:textSize="25dp"
+        android:textStyle="bold"></TextView>
+
+    <Button
+        android:id="@+id/upload_pdf"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/ic_cloud"/>
 
 
-</LinearLayout>
+
+
+</RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/files"
+        android:layout_height="1dp"
+        android:background="@color/gold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/files"
+        android:layout_marginTop="10dp"
+        android:id="@+id/books_list"/>
+
+
+
+</RelativeLayout>
