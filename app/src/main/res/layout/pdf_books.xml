@@ -12,6 +12,7 @@
     android:orientation="horizontal">
 
     <RelativeLayout
+        android:id="@+id/book_cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

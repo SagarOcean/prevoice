@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -60,6 +61,8 @@ public class ReadFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.reading_fragment, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+
         uploadFile = view.findViewById(R.id.upload_pdf);
         loader = view.findViewById(R.id.pdf_loader);
         pdfList = view.findViewById(R.id.books_list);
@@ -73,7 +76,7 @@ public class ReadFragment extends Fragment {
             }
         });
         pdfRef = FirebaseStorage.getInstance().getReference().child("Pdf Files");
-        pdfFilesRef = FirebaseDatabase.getInstance().getReference().child("books");
+        pdfFilesRef = FirebaseDatabase.getInstance().getReference().child("books").child("books_details");
         return view;
     }
 
@@ -92,13 +95,13 @@ public class ReadFragment extends Fragment {
             fileName =returnCursor.getString(nameIndex);
             fileSize=Long.toString(returnCursor.getLong(sizeIndex));
             Toast.makeText(getActivity().getApplicationContext(), fileName+" Uploaded successfully", Toast.LENGTH_SHORT).show();
-            uploadFileTodatabase();
+            uploadFileToDatabase();
             retrieveFiles();
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void uploadFileTodatabase() {
+    private void uploadFileToDatabase() {
         if (pdfUri == null) {
             Toast.makeText(getContext(), "Please select a pdf first", Toast.LENGTH_SHORT).show();
 
@@ -122,6 +125,7 @@ public class ReadFragment extends Fragment {
                 public void onComplete(@NonNull Task<Uri> task) {
                     if (task.isSuccessful()) {
                         downloadUrl = task.getResult().toString();
+                        Toast.makeText(getActivity().getApplicationContext(), downloadUrl+" Uploaded successfully", Toast.LENGTH_SHORT).show();
                         HashMap<String, Object> pdfMap = new HashMap<>();
                         pdfMap.put("openFile", downloadUrl);
                         pdfMap.put("fileName", fileName);
@@ -147,12 +151,14 @@ public class ReadFragment extends Fragment {
     public static class FindPdfViewHolder extends RecyclerView.ViewHolder {
         TextView pdfName,pdfSize;
         ImageView pdfImage;
+        RelativeLayout layout;
 
         public FindPdfViewHolder(@NonNull View item) {
             super(item);
             pdfName = item.findViewById(R.id.book_name);
             pdfImage = item.findViewById(R.id.book_image);
             pdfSize = item.findViewById(R.id.book_size);
+            layout = item.findViewById(R.id.book_cardView);
 
         }
     }
